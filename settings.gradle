@@ -1,0 +1,5 @@
+rootProject.name = 'pact-demo'
+include(':order-service')
+project(':order-service').projectDir = file('order-service')
+include(':product-service')
+project(':product-service').projectDir = file('product-service')

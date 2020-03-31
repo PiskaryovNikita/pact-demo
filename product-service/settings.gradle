@@ -1,0 +1,9 @@
+rootProject.name = 'product-management-parent'
+include(':product-management-api')
+include(':product-management-app')
+include(':product-management-impl')
+include(':product-management-persistence')
+project(':product-management-api').projectDir = file('api')
+project(':product-management-app').projectDir = file('app')
+project(':product-management-impl').projectDir = file('impl')
+project(':product-management-persistence').projectDir = file('persistence')

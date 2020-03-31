@@ -1,0 +1,14 @@
+plugins{
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+}
+
+bootJar {
+    mainClassName = 'com.gongsi.product.management.ProductManagementApplication'
+}
+
+dependencies {
+    implementation project(':product-management-api')
+    implementation project(':product-management-impl')
+}
+
+description = 'Product Management :: Application'
