@@ -1,15 +1,24 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+}
+
+
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'maven-publish'
 }
+
 
 allprojects {
     group = 'com.gongsi'
     version = '0.0.1-SNAPSHOT'
 
     repositories {
-        jcenter()
         mavenLocal()
+        jcenter()
         mavenCentral()
         maven {
             url = 'http://repo.maven.apache.org/maven2'
@@ -26,6 +35,7 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
 
     dependencyManagement {
         imports {

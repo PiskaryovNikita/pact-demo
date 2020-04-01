@@ -1,5 +1,6 @@
 dependencies {
     implementation 'javax.validation:validation-api'
+    implementation "${project.group}:product-management-api:0.0.1-SNAPSHOT"
 }
 
-description = 'Product Management :: API'
+description = 'Order Service :: API'

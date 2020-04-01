@@ -6,5 +6,8 @@
 **/build
 
 # IntelliJ IDEA
+**/out
 **/.idea
 **/*.iml
+**.class
+/order-service/api/out/

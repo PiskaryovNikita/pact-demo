@@ -1,0 +1,17 @@
+dependencies {
+    implementation 'javax.validation:validation-api'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.getGroup()
+            artifactId = "product-management-api"
+            version = project.getVersion()
+
+            from components.java
+        }
+    }
+}
+
+description = 'Product Management :: API'

@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':product-management-api')
+
+    testImplementation libraries.pact_consumer
+}
+
+description = 'Product Management :: Implementation'

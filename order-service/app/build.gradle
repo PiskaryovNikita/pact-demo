@@ -3,12 +3,12 @@ plugins{
 }
 
 bootJar {
-    mainClassName = 'com.gongsi.product.management.ProductManagementApplication'
+    mainClassName = 'com.gongsi.product.management.OrderServiceApplication'
 }
 
 dependencies {
-    implementation project(':product-management-api')
-    implementation project(':product-management-impl')
+    implementation project(':order-service-api')
+    implementation project(':order-service-impl')
 }
 
-description = 'Product Management :: Application'
+description = 'Order Service :: Application'
