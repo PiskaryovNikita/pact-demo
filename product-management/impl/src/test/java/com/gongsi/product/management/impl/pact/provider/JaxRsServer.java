@@ -1,4 +1,4 @@
-package provider;
+package com.gongsi.product.management.impl.pact.provider;
 
 import io.undertow.Undertow;
 import java.util.ArrayList;

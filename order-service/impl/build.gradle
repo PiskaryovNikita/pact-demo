@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        // jcenter()
         mavenCentral()
     }
     dependencies {
@@ -29,5 +28,8 @@ pact {
         tags = ["master"]
     }
 }
+
+pactPublish.dependsOn test
+build.dependsOn pactPublish
 
 description = 'Order Service :: Implementation'
