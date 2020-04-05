@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class OrderConfig {
+public class OrderServiceConfig {
 
     @Bean
-    public ProductController productService(@Value("${service.path.product.management}") String productManagementPath) {
-        return JAXRSClientFactory.create(productManagementPath, ProductController.class);
+    public ProductService productService() {
+        return new ProductService();
     }
 
     @Bean
-    public OrderController orderController(ProductController productController) {
-        return new OrderControllerImpl(productController);
+    public OrderController orderController(ProductService productService) {
+        return new OrderControllerImpl(productService);
     }
 
 }

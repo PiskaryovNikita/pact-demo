@@ -9,6 +9,19 @@ bootJar {
 dependencies {
     implementation project(':product-management-api')
     implementation project(':product-management-impl')
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.6.RELEASE'
+    testCompile 'au.com.dius:pact-jvm-consumer:4.0.1'
+    testCompile 'au.com.dius:pact-jvm-consumer-junit:4.0.1'
+    testCompile 'au.com.dius:pact-jvm-core-model:4.0.1'
+    testCompile 'au.com.dius:pact-jvm-provider:4.0.1'
+    testCompile 'au.com.dius:pact-jvm-provider-junit:4.0.1'
+
+    testCompile 'org.jboss.resteasy:resteasy-undertow:3.6.1.Final'
+    testCompile 'io.undertow:undertow-servlet:2.0.29.Final'
+    testCompile 'io.undertow:undertow-core:2.0.29.Final'
+    testCompile 'org.jboss.resteasy:resteasy-jackson-provider:3.6.1.Final'
+    testCompile 'org.jboss.resteasy:resteasy-jaxb-provider:3.6.1.Final'
 }
 
 description = 'Product Management :: Application'

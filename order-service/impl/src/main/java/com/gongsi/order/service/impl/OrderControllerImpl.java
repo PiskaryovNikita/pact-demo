@@ -25,9 +25,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 @RequiredArgsConstructor
 public class OrderControllerImpl implements OrderController {
-    private final ProductController productService;
-    @Value("${service.path.product.management}")
-    private String productManagementPath;
+    private final ProductService productService;
 
     @Override
     public String getVersion() {
@@ -39,22 +37,8 @@ public class OrderControllerImpl implements OrderController {
     @Override
     public OrderResponse getOrder(long id) {
         User user = new User(1L, "Name", "e@e.com");
+        final ProductResponse productResponse = productService.getProduct(1L);
 
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-
-        try {
-            HttpGet request = new HttpGet(String.format("%s/api/products/1", productManagementPath));
-            request.addHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON);
-            String entity;
-            try (CloseableHttpResponse response = httpClient.execute(request)) {
-                entity = EntityUtils.toString(response.getEntity());
-            }
-            ObjectMapper objectMapper = new ObjectMapper();
-            ProductResponse productResponse = objectMapper.readValue(entity, ProductResponse.class);
-
-            return new OrderResponse(user, OffsetDateTime.now(), productResponse);
-        } catch (IOException e) {
-            throw new InternalServerErrorException();
-        }
+        return new OrderResponse(user, OffsetDateTime.now(), productResponse);
     }
 }

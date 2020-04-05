@@ -1,6 +1,20 @@
+plugins {
+    id 'au.com.dius.pact' version '4.0.0'
+    id "org.ajoberstar.grgit" version "1.6.0"
+}
+
+pact {
+    publish {
+        providerVersion = project.version
+        pactBrokerUrl = 'http://localhost'
+        tags = ["master"]
+    }
+}
+
 dependencies {
     implementation project(':product-management-api')
 
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.6.RELEASE'
     testImplementation libraries.pact_consumer
 }
 
